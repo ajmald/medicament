@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ##Screenshot
 
-![Alt text](src/assets/images/medicaments.jpg?raw=true "Screenshot")
+![Alt text](src/assets/images/MedicamentApp.png?raw=true "Screenshot")
 
 
 ## Development server
