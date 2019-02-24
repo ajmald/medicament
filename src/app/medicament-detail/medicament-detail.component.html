@@ -1,0 +1,11 @@
+<div *ngIf="medicament">
+  <h2>{{medicament.denomination}} Denomination</h2>
+  <div><span>code CIS: </span>{{medicament.codeCIS}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="medicament.denomination" placeholder="denomination"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>
+<router-outlet></router-outlet>  
