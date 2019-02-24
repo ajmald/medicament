@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  { path: 'detail/:codeCIS', component: MedicamentDetailComponent },
-  { path: 'acceuil', component: AppComponent }
+ 
+ /* { path: 'detail/:codeCIS', component: MedicamentDetailComponent },
+  { path: 'acceuil', component: AppComponent } */
 
 ];
 

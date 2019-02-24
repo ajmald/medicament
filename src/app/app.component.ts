@@ -6,6 +6,7 @@ import {Pathologie} from '../Pathologie';
 import {NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
 import { ModalAboutComponent } from './modal-about/modal-about.component';
+import {Medicament} from './../Medicament';
 import {MedicamentDetailComponent} from './medicament-detail/medicament-detail.component';
 
 
@@ -14,6 +15,7 @@ import {MedicamentDetailComponent} from './medicament-detail/medicament-detail.c
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+  
 })
 
 
@@ -91,8 +93,8 @@ export class AppComponent {
         );
         
     }
-
-   
+    
+    
     public getMedicamentDetailsByCodeCis(id:number){
       this.appService.getMedicamentDetailsByCodeCis(id).subscribe(
         medicament =>{
@@ -125,7 +127,7 @@ export class AppComponent {
     }
 
     open() {
-      // const modalRef = this.modalService.open(ModalComponent);
+       //const modalRef = this.modalService.open(ModalComponent);
       const modalRef = this.modalService.open(ModalAboutComponent); 
       //const modalRef = this.modalService.open(MedicamentDetailComponent);
       modalRef.componentInstance.title = 'Médicament';

@@ -20,7 +20,7 @@ import { ModalAboutComponent } from './modal-about/modal-about.component';
 
   imports: [
     BrowserModule,
-    //NgbModule.forRoot(),
+    NgbModule.forRoot(),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -44,7 +44,8 @@ import { ModalAboutComponent } from './modal-about/modal-about.component';
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    ModalAboutComponent
-  ]
+    ModalAboutComponent,
+    MedicamentDetailComponent
+    ]
 })
 export class AppModule { }

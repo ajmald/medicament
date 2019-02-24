@@ -21,19 +21,20 @@
         <img src="../assets/images/medicaments.jpg">
         <br>
         <h2>Liste des médicaments associés</h2>
-            <!--<label *ngFor="let medicament of medicamentslist" [ngStyle]="{color: findColor(medicament.denomination)}" (click)= "getMedicamentDetailsByCodeCis(medicament.codeCIS);open()">  
+            <label *ngFor="let medicament of medicamentslist" [ngStyle]="{color: findColor(medicament.denomination)}" (click)= "getMedicamentDetailsByCodeCis(medicament.codeCIS);open()">  
                 {{medicament.denomination}}
                                 <br/>
-              </label>  -->
+              </label>
+            
 
-          <ul class="medicaments">
+          <!--<ul class="medicaments">
             <li *ngFor="let medicament of medicamentslist">
-              <a routerLink="/detail/{{medicament.codeCIS}}">
+              <a routerLink="/detail/{{medicament.codeCIS}}" (click)="open()">
                 <span class="badge">{{medicament.codeCIS}}</span> {{medicament.denomination}}
               </a>
             </li>
           </ul>
-            
+            <router-outlet></router-outlet> -->
       </div>
     </div>
     </div>
