@@ -10,10 +10,6 @@ import {Medicament} from '../../Medicament';
 @Component({
   selector: 'app-medicament-detail',
   templateUrl: './medicament-detail.component.html',
-  template: `
-  <h3>code cis : {{medicament.codeCIS}}</h3>
-  <p>denomination : {{medicament.denomination}}</p>
-`, 
   styleUrls: ['./medicament-detail.component.css']
 })
 export class MedicamentDetailComponent implements OnInit {
