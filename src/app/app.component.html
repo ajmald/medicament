@@ -10,7 +10,7 @@
         <img src="../assets/images/pathologiessmall.jpeg" >
         <br>
         <h2>Liste des pathologies</h2>
-        <form [formGroup]="form" (ngSubmit)="submit()">
+        <form [formGroup]="form" >
                 <input type="button" class ="btn" formArrayName="pathologiesList" *ngFor="let pathologie of pathologiesList; let i = index" value="{{pathologiesList[i].nom}}" id="{{pathologiesList[i].nom}}" label = "" (click)="getMedicamentByPathology(pathologiesList[i].nom)">
                 <br/>
           </form>
