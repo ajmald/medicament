@@ -14,6 +14,7 @@ import { ModalComponent } from './modal/modal.component';
 import { AboutComponent } from './about/about.component';
 import {RouterModule} from '@angular/router';
 import { ModalAboutComponent } from './modal-about/modal-about.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ModalAboutComponent } from './modal-about/modal-about.component';
     HttpClientModule,
     RouterModule,
     UiModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   declarations: [
     AppComponent,
@@ -36,6 +38,7 @@ import { ModalAboutComponent } from './modal-about/modal-about.component';
     ModalComponent,
     AboutComponent,
     ModalAboutComponent
+    
     ],
 
   providers: [

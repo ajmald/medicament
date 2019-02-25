@@ -8,6 +8,7 @@ import { ModalComponent } from './modal/modal.component';
 import { ModalAboutComponent } from './modal-about/modal-about.component';
 import {Medicament} from './../Medicament';
 import {MedicamentDetailComponent} from './medicament-detail/medicament-detail.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 
@@ -28,7 +29,10 @@ export class AppComponent {
   parentMessage : number = 999;
 
 
-  constructor(public appService: AppService,public response: Router, private formBuilder:FormBuilder,private modalService: NgbModal){
+  constructor(public appService: AppService,public response: Router, 
+    private formBuilder:FormBuilder,
+    private modalService: NgbModal,
+    private spinner: NgxSpinnerService){
 
     this.pathologiesList = pathologiesList;
     this.medicamentsDetailsList = [];
@@ -42,7 +46,12 @@ export class AppComponent {
 
   }
   ngOnInit() {
-    this.pathologiesList = pathologiesList;  
+    this.spinner.show(); 
+    setTimeout(() => {
+      this.pathologiesList = pathologiesList;  
+      this.spinner.hide(); 
+    }, 1000);
+    
   }
 
 
@@ -68,11 +77,17 @@ export class AppComponent {
 
    
     public getMedicamentsList(){
+      this.spinner.show();
       this.appService.getMedicaments().subscribe(
         medicament => {
           this.medicamentslist=medicament;
           for (let i = 0; i < this.medicamentslist.length; i++) {
             let denomination = this.medicamentslist[i].denomination;
+            if(this.medicamentslist.length ===0)
+              {
+                this.spinner.hide();
+              }
+              this.spinner.hide();
           }
         },
       );
@@ -81,28 +96,40 @@ export class AppComponent {
 
 
     public getMedicamentByPathology(name:string){
+      this.spinner.show();
         this.appService.getMedicamentByPathology(name).subscribe(
           medicament =>{
             this.medicamentslist=medicament;
             for (let i = 0; i < this.medicamentslist.length; i++) {
               let codeCIS = this.medicamentslist[i].codeCIS;
               let nom = this.medicamentslist[i].denomination;
-
+              if(this.medicamentslist.length ===0)
+              {
+                this.spinner.hide();
+              }
+              this.spinner.hide();
             }
-          },
+          }
         );
-        
     }
     
     
     public getMedicamentDetailsByCodeCis(id:number){
+      this.spinner.show();
       this.appService.getMedicamentDetailsByCodeCis(id).subscribe(
         medicament =>{
+          
           this.medicamentsDetailsList=medicament;
           for (let i = 0; i < this.medicamentsDetailsList.length; i++) {
             let formePharmaceutique = this.medicamentsDetailsList[i].formePharmaceutique;
             console.log(formePharmaceutique);
+            if(this.medicamentsDetailsList.length ===0)
+            {
+              this.spinner.hide();
+            }
+            this.spinner.hide();
           }
+          
         },
       );
       }
