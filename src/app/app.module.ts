@@ -10,11 +10,9 @@ import { UiModule } from './ui/ui.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicamentDetailComponent } from './medicament-detail/medicament-detail.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from './modal/modal.component';
-import { AboutComponent } from './about/about.component';
 import {RouterModule} from '@angular/router';
-import { ModalAboutComponent } from './modal-about/modal-about.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import {Medicament} from './../Medicament';
 
 
 @NgModule({
@@ -34,20 +32,17 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AppComponent,
     PathologiesComponent,
     MedicamentsComponent,
-    MedicamentDetailComponent,
-    ModalComponent,
-    AboutComponent,
-    ModalAboutComponent
-    
+    MedicamentDetailComponent    
     ],
 
   providers: [
     NgbActiveModal,
-    AppService
+    AppService,
+    Medicament
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    ModalAboutComponent,
+    AppComponent,
     MedicamentDetailComponent
     ]
 })

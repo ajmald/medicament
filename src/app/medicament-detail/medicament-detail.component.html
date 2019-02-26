@@ -1,12 +1,10 @@
-<div *ngIf="medicament">
-  <h2>{{medicament.denomination}} Denomination</h2>
-  <div><span>code CIS: </span>{{medicament.codeCIS}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="medicament.denomination" placeholder="denomination"/>
-    </label>
-  </div>
-  <button (click)="goBack()">go back</button>
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Details du médicament</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
-<!--<router-outlet></router-outlet>-->
-
+<div class="modal-body">
+  <input [(ngModel)]="medicament.codeCIS" type="number">
+  <input [(ngModel)]="medicament.denomination" type="string">
+</div>
