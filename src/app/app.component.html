@@ -1,7 +1,5 @@
 
 <app-layout>
-
-
 <div class="container-fluid">
   <br>
   <div class="row">
@@ -9,7 +7,7 @@
       <div class="centered">
         <img src="../assets/images/pathologiessmall.jpeg" >
         <br>
-        <h2>Liste des pathologies</h2>
+        <h2>Liste des spécialités</h2>
         <form [formGroup]="form" >
                 <input type="button" class ="btn" formArrayName="pathologiesList" *ngFor="let pathologie of pathologiesList; let i = index" value="{{pathologiesList[i].nom}}" id="{{pathologiesList[i].nom}}" label = "" (click)="getMedicamentByPathology(pathologiesList[i].nom)">
                 <br/>
@@ -21,20 +19,10 @@
         <img src="../assets/images/medicaments.jpg">
         <br>
         <h2>Liste des médicaments associés</h2>
-            <label *ngFor="let medicament of medicamentslist" [ngStyle]="{color: findColor(medicament.denomination)}" (click)= "getMedicamentDetailsByCodeCis(medicament.codeCIS);open()">  
+            <label *ngFor="let medicament of medicamentslist" [ngStyle]="{color: findColor(medicament.denomination)}"(click)= "getMedicamentDetailsByCodeCis(medicament.codeCIS);">  
                 {{medicament.denomination}}
                                 <br/>
               </label>
-            
-
-          <!--<ul class="medicaments">
-            <li *ngFor="let medicament of medicamentslist">
-              <a routerLink="/detail/{{medicament.codeCIS}}" (click)="open()">
-                <span class="badge">{{medicament.codeCIS}}</span> {{medicament.denomination}}
-              </a>
-            </li>
-          </ul>
-            <router-outlet></router-outlet> -->
       </div>
     </div>
     </div>
@@ -49,7 +37,6 @@ fullScreen = "true"
 >
 <p style="color: white" > Loading... </p>
 </ngx-spinner>
-  
 
 
 

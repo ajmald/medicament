@@ -112,19 +112,20 @@ export class AppComponent {
           }
         );
     }
-
+    
      public getMedicamentDetailsByCodeCis(id:number):Medicament[]{
       this.appService.getMedicamentDetailsByCodeCis(id).subscribe(
         medicament =>{
           this.medicamentsDetailsList = medicament;
-          for (let i = 0; i < this.medicamentsDetailsList.length; i++) {
-            console.log("Ajmal" + medicament.codeCIS);
-            console.log(medicament.denomination);
-          }
+          this.open(); 
         }
       );
       return this.medicamentsDetailsList;
-    } 
+     } 
+
+    
+
+ 
 
 
 
