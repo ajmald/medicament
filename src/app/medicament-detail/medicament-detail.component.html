@@ -1,11 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
 <div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">Details du médicament : {{medicament.denomination}}</h4>
+  <b class="modal-title" id="modal-basic-title">{{medicament.denomination}}</b>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
+  <b></b>
   <!--<input [(ngModel)]="medicament.denomination" type="string"> -->
+  <div class="limiter">
+      <div class="container-table100">
+        <div class="wrap-table100">
+          <div class="table100">
+              <div class="responsive-table-line" style="margin:0px auto;max-width:700px;">
+                  <table class="table table-bordered table-condensed table-body-center" >
   <thead>
     <tr>
       <td>Forme Pharmaceutique</td>
@@ -17,7 +28,6 @@
     <tr *ngFor ="let m of medicamentsDetailslist;">
       <td>{{m.formePharmaceutique}}</td>
       <td>{{m.voiesAdministration}}</td>
-      <!--<td>{{m.compositions[i].substancesActives[i].denominationSubstance}}</td> -->
       <td>
         <ng-container *ngFor="let comp of m.compositions">
           <ng-container *ngFor="let sub of comp.substancesActives">
@@ -27,7 +37,15 @@
           </td>
     </tr>
   </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
 </div> 
+
 
   
   

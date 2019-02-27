@@ -15,6 +15,8 @@ import {Medicament} from '../../Medicament';
 export class MedicamentDetailComponent implements OnInit {
   @Input() public medicament;
   medicamentsDetailslist: Medicament[] =[];
+  displayedColumns  :  string[] = ['Forme Pharmaceutique', 'Voies Administration','Denomination Substance'];
+
 
   constructor(private appService: AppService,
     public activeModal: NgbActiveModal,

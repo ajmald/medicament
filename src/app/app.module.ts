@@ -10,6 +10,7 @@ import { UiModule } from './ui/ui.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicamentDetailComponent } from './medicament-detail/medicament-detail.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatTableModule } from  '@angular/material';
 import {RouterModule} from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {Medicament} from './../Medicament';
@@ -26,7 +27,8 @@ import {Medicament} from './../Medicament';
     RouterModule,
     UiModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatTableModule
   ],
   declarations: [
     AppComponent,

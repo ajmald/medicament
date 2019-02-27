@@ -43,3 +43,7 @@ body {
   background-color: green;
   border-radius: 50%;
 }
+
+label {
+  cursor: pointer;
+}

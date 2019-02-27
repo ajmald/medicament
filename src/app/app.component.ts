@@ -7,7 +7,8 @@ import {NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {Medicament} from './../Medicament';
 import {MedicamentDetailComponent} from './medicament-detail/medicament-detail.component';
 import { NgxSpinnerService } from 'ngx-spinner';
-
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+  MatSortModule, MatTableModule } from "@angular/material";
 
 
 @Component({
