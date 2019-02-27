@@ -14,12 +14,20 @@ import {Medicament} from '../../Medicament';
 })
 export class MedicamentDetailComponent implements OnInit {
   @Input() public medicament;
+  medicamentsDetailslist: Medicament[] =[];
+
   constructor(private appService: AppService,
     public activeModal: NgbActiveModal,
-    private route: ActivatedRoute,private location: Location) { }
+    private route: ActivatedRoute,private location: Location,private Medicament:Medicament
+   ) {
+    }
 
 
   ngOnInit() {
+
+    this.medicamentsDetailslist.push(this.medicament);
+    console.log(this.medicamentsDetailslist);
+
   }
 
 
@@ -28,6 +36,7 @@ export class MedicamentDetailComponent implements OnInit {
 goBack(): void {
   this.location.back();
 }
+
 
 
 
