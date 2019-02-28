@@ -7,8 +7,7 @@ import {NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {Medicament} from './../Medicament';
 import {MedicamentDetailComponent} from './medicament-detail/medicament-detail.component';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
-  MatSortModule, MatTableModule } from "@angular/material";
+
 
 
 @Component({
@@ -126,11 +125,6 @@ export class AppComponent {
 
     
 
- 
-
-
-
-
      
     public findColor(medicament: string): string {
 
@@ -152,38 +146,26 @@ export class AppComponent {
 
     }
 
-    
-
-
-
 
 
 }
 
 export const pathologiesList: Pathologie[] = [
   { nom: 'allergologie' },
-  { nom: 'immunologie' },
-  { nom: 'andrologie' },
   { nom: 'cardiologie' },
   { nom: 'chirurgie' },
   { nom: 'dermatologie' },
   { nom: 'endocrinologie' },
   { nom: 'gastro-entérologie' },
-  { nom: 'gériatrie' },
   { nom: 'gynécologie' },
   { nom: 'hématologie' },
-  { nom: 'hépatologie' },
   { nom: 'infectiologie' },
-  { nom: 'térologie' },
   { nom: 'néonatologie' },
   { nom: 'néphrologie' },
   { nom: 'neurologie' },
-  { nom: 'odontologie' },
   { nom: 'obstétrique' },
   { nom: 'infectiologie' },
   { nom: 'ophtalmologie' },
-  { nom: 'orthopédie' },
-  { nom: 'Oto-rhino-laryngologie' },
   { nom: 'pédiatrie' },
   { nom: 'pneumologie' },
   { nom: 'psychiatrie' },

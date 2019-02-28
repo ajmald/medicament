@@ -28,7 +28,7 @@ export class MedicamentDetailComponent implements OnInit {
   ngOnInit() {
 
     this.medicamentsDetailslist.push(this.medicament);
-    console.log(this.medicamentsDetailslist);
+    //console.log(this.medicamentsDetailslist);
 
   }
 

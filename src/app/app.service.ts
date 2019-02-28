@@ -39,7 +39,7 @@ export class AppService {
   var params = new HttpParams()
   //.set('query=', `${name}`)
   .set('query',`${name}`)
-  console.log(this.targetUrl);
+  //console.log(this.targetUrl);
   var test = decodeURI(params.toString());
   return this.http.get<Medicament>(this.targetUrl,{params}).pipe(
     //return this.http.get<Medicament>(this.targetUrl + "?" + test).pipe(
