@@ -5,19 +5,25 @@
   <div class="row">
     <div class="split left">
       <div class="centered">
-        <img src="../assets/images/pathologiessmall.jpeg" >
-        <br>
+          <dl class="slidedeck">
+             
+              <img src="../assets/images/pathologiessmall.jpeg" width="130" height="130" />
+
+                  </dl> 
         <h2>Liste des spécialités</h2>
         <form [formGroup]="form" >
                 <input type="button" class ="btn" formArrayName="pathologiesList" *ngFor="let pathologie of pathologiesList; let i = index" value="{{pathologiesList[i].nom}}" id="{{pathologiesList[i].nom}}" label = "" (click)="getMedicamentByPathology(pathologiesList[i].nom)">
-                <br/>
+                <br/><br>
+                <ul><li>Abacavir</li>\n<li>Abatacept</li>\n<li>Abciximab</li>\n<li>Acamprosate</li>\n<li>Acarbose</li>\n<li>Ac\u00e9butolol</li>\n<li>Ac\u00e9clidine</li>\n<li>Ac\u00e9clof\u00e9nac</li>\n<li>Ac\u00e9dob\u00e8ne</li>\n<li>Ac\u00e9nocoumarol</li>\n<li>Ac\u00e9promazine</li>\n<li>Ac\u00e9tarsol</li>\n<li>Ac\u00e9tazolamide</li>\n<li>Ac\u00e9torphan</li>\n<li>Ac\u00e9tylcholine</li>\n<li>Ac\u00e9tylcyst\u00e9ine</li>\n<li>Ac\u00e9tylleucine</li>\n<li>Aciclovir</li>\n<li>Acide ac\u00e9tylsalicylique</li>\n<li>Acide ac\u00e9xamique</li>\n<li>Acide alendronique</li>\n<li>Acide alginique</li>\n<li>Acide amidotrizo\u00efque</li>\n<li>Acide ascorbique</li>\n<li>Acide aspartique</li>\n<li>Acide az\u00e9la\u00efque</li>\n<li>Acide borique</li>\n<li>Acide canr\u00e9no\u00efque</li>\n<li>Acide chondro\u00eftine sulfurique</li>\n<li>Acide clavulanique</li>\n<li>Acide clodronique</li>\n<li>Acide cromoglicique</li>\n<li>Acide d\u00e9soxyribonucl\u00e9ique</li>\n<li>Acide dim\u00e9crotique</li>\n<li>Acide \u00e9d\u00e9tique</li>\n<li>Acide \u00e9tidronique</li>\n<li>Acide flavodique</li>\n<li>Acide folinique</li>\n<li>Acide folique</li>\n<li>Acide fusidique</li>\n<li>Acide gabod\u00e9nique</li>\n<li>Acide gadopent\u00e9nique</li>\n<li>Acide gadot\u00e9rique</li>\n<li>Acide glutamique</li>\n<li>Acide ibandronique</li>\n<li>Acide ioxaglique</li>\n<li>Acide ioxitalamique</li>\n<li>Acide m\u00e9f\u00e9namique</li>\n<li>Acide N-aspartylglutamique</li>\n<li>Acide nicotinique</li>\n<li>Acide niflumique</li>\n<li>Acide oxoglurique</li>\n<li>Acide pamidronique</li>\n<li>Acide panthot\u00e9nique</li>\n<li>Acide para-aminobenzo\u00efque</li>\n<li>Acide para-aminosalicylique</li>\n<li>Acide pip\u00e9midique</li>\n<li>Acide r\u00e9sidronique</li>\n<li>Acide salicylique</li>\n<li>Acide t\u00e9no\u00efque</li>\n<li>Acide tiaprof\u00e9nique</li>\n<li>Acide tiludronique</li>\n<li>Acide tranexamique</li>\n<li>Acide und\u00e9cyl\u00e9nique</li>\n<li>Acide ursod\u00e9soxycholique</li>\n<li>Acide valpro\u00efque</li>\n<li>Acide zol\u00e9dronique</li>\n<li>Acide gras om\u00e9ga 3</li>\n<li>Acitr\u00e9tine</li>\n<li>Acriflavine</li>\n<li>Actinoquinol</li>\n<li>Adalimumab</li>\n<li>Adapal\u00e8ne</li>\n<li>Ad\u00e9fovir</li>\n<li>Ad\u00e9nine</li>\n<li>Ad\u00e9nosine</li>\n<li>Adrafinil</li>\n<li>Adr\u00e9naline</li>\n<li>Aescine</li>\n<li>Albendazole</li>\n<li>Albumine</li>\n<li>Alcool benzylique</li>\n<li>Adesleukine</li>\n<li>Alemtuzumab</li>\n<li>Alfacalcidol</li>\n<li>Alfentanil</li>\n<li>Alfuzosine</li>\n<li>Alim\u00e9mazine</li>\n<li>Altr\u00e9tino\u00efne</li>\n<li>Alizapride</li>\n<li>Allanto\u00efne</li>\n<li>Allopurinol</li>\n<li>Alminiprof\u00e8ne</li>\n<li>Almitrine</li>\n<li>Almotriptan</li>\n<li>Alo\u00e8s</li>\n<li>Alpha-amylase</li>\n<li>Alpha hydroxyvitamineD3</li>\n<li>Alpha-tocoph\u00e9rol</li>\n<li>Alprazolam</li>\n<li>Alprostadil</li>\n<li>Alt\u00e9plase</li>\n<li>Altizide</li>\n<li>Aluminium</li>\n<li>Alv\u00e9rine</li>\n<li>Amantadine</li>\n<li>Amb\u00e9monium chlorure</li>\n<li>Ambroxol</li>\n<li>Amifostine</li>\n<li>Amiloride</li>\n<li>Amiodarone</li>\n<li>Amisulpride</li>\n<li>Amitryptiline</li>\n<li>Amlodipine</li>\n<li>Amodiaquine</li>\n<li>Amorolfine</li>\n<li>Amoxapine</li>\n<li>Amoxicilline</li>\n<li>Amphot\u00e9ricine B</li>\n<li>Ampicilline</li>\n<li>Apr\u00e9navir</li>\n<li>Amyl\u00e9ine</li>\n<li>Amylm\u00e9tacr\u00e9sol</li>\n<li>Anagr\u00e9lide</li>\n<li>Anakinra</li>\n<li>Anastrozole</li>\n<li>Androstanolone</li>\n<li>An\u00e9tholtrithione</li>\n<li>Antithrombine humaine</li>\n<li>Apraclonidine</li>\n<li>Apr\u00e9pitant</li>\n<li>Aprotinine</li>\n<li>Argent</li>\n<li>Arginine</li>\n<li>Aripiprazole</li>\n<li>Arnica extrait</li>\n<li>Arnica teinture</li>\n<li>Arsenic</li>\n<li>Art\u00e9m\u00e9ther</li>\n<li>Artica\u00efne</li>\n<li>Asparaginase</li>\n<li>Atazanvir</li>\n<li>At\u00e9nolol</li>\n<li>Atorvastatine</li>\n<li>Atosiban</li>\n<li>Atovaquone</li>\n<li>Atracurium b\u00e9silate</li>\n<li>Atropine</li>\n<li>Auranofine</li>\n<li>Aurithiopropanolsulfonate</li>\n<li>Azathioprine</li>\n<li>Az\u00e9lastine</li>\n<li>Azithromycine</li>\n<li>AZR</li>\n<li>Aztr\u00e9onam</li></ul>
+
           </form>
       </div>
     </div>
     <div class="split right">
       <div class="centered">
-        <img src="../assets/images/medicaments.jpg">
-        <br>
+          <dl class="slidedeck"> 
+              <img src="../assets/images/medicaments.jpg" width="130" height="130" />
+                  </dl> 
         <h2>Liste des médicaments associés</h2>
             <label *ngFor="let medicament of medicamentslist" [ngStyle]="{color: findColor(medicament.denomination)}"(click)= "getMedicamentDetailsByCodeCis(medicament.codeCIS);">  
                 {{medicament.denomination}}
@@ -25,14 +31,15 @@
               </label>
       </div>
     </div>
-    </div>
-       
-</div>
+
+          
+        </div>
+        </div>
+
+   
 <br>
 <br>
-</app-layout>
-
-
+    
 <ngx-spinner
 bdOpacity = 0.7
 bdColor = "rgba(182,168,168,0.24)"
