@@ -25,6 +25,8 @@ export class AppComponent {
   pathologiesList : any =[];
   medicamentsDetailsList : any =[];
   parentMessage : number = 999;
+  public showSpecialites = false;
+  public showPrincipesActifs=false;
   
 
 
@@ -71,7 +73,15 @@ export class AppComponent {
         (this.form.controls.pathologiesList as FormArray).push(control);
       });
     }
-  
+   
+    public setFormVisibility(event:any){
+      var idAttr = event.currentTarget.id;
+  this.showSpecialites = (idAttr ==="specialites");
+  this.showPrincipesActifs = (idAttr ==="principesactifs");
+  console.log(idAttr);
+  console.log("Specialite",this.showSpecialites);
+  console.log("PrincipesActifs",this.showPrincipesActifs);
+    }
 
 
 

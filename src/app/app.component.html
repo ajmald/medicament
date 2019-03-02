@@ -3,15 +3,27 @@
 <div class="container-fluid">
   <br>
   <div class="row">
+    
     <div class="split left">
       <div class="centered">
           <dl class="slidedeck">
-             
-              <img src="../assets/images/pathologiessmall.jpeg" width="130" height="130" />
-
-                  </dl> 
-        <h2>Liste des spécialités</h2>
-        <form [formGroup]="form" >
+              <div class="container">
+                  <img src="../assets/images/pathologiessmall.jpeg" class="img" >
+                  <div id ="specialites" class="overlay" (click)="setFormVisibility($event)">
+                      <div class="text" >Par spécialité</div>
+                    </div>
+                  </div>           
+          </dl>
+          <dl class="slidedeck">
+              <div class="container">
+               
+                  <img src="../assets/images/pathologiessmall.jpeg" class="img" >
+                  <div id ="principesactifs" class="overlay" (click)="setFormVisibility($event)">
+                      <div class="text" >Par spécialité</div>
+                    </div>
+                  </div>           
+          </dl>
+        <form [formGroup]="form" *ngIf="showSpecialites">
                 <input type="button" class ="btn" formArrayName="pathologiesList" *ngFor="let pathologie of pathologiesList; let i = index" value="{{pathologiesList[i].nom}}" id="{{pathologiesList[i].nom}}" label = "" (click)="getMedicamentByPathology(pathologiesList[i].nom)">
                 <br/><br>
           </form>
@@ -25,8 +37,8 @@
         <h2>Liste des médicaments associés</h2>
             <label *ngFor="let medicament of medicamentslist" [ngStyle]="{color: findColor(medicament.denomination)}"(click)= "getMedicamentDetailsByCodeCis(medicament.codeCIS);">  
                 {{medicament.denomination}}
-                                <br/>
-              </label>
+                 <br/>
+            </label>
       </div>
     </div>
 
