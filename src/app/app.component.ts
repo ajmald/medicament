@@ -8,13 +8,14 @@ import {Medicament} from './../Medicament';
 import {PrincipeActif} from './../PrincipeActif';
 import {MedicamentDetailComponent} from './medicament-detail/medicament-detail.component';
 import { NgxSpinnerService } from 'ngx-spinner';
-
+import {NgbPopoverConfig} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [NgbPopoverConfig]
   
 })
 
@@ -26,16 +27,21 @@ export class AppComponent {
   pathologiesList : any =[];
   medicamentsDetailsList : any =[];
   principesActifsList:any =[];
+  principeActifSummaryList: any =[];
   parentMessage : number = 999;
   public showSpecialites = false;
   public showPrincipesActifs=false;
+  public principeActifExists= false;
+  public medicamentExists = false;
+  
   
 
 
   constructor(public appService: AppService,public response: Router, 
     private formBuilder:FormBuilder,
     private modalService: NgbModal,
-    private spinner: NgxSpinnerService,private Medicament:Medicament){
+    private spinner: NgxSpinnerService,private Medicament:Medicament,
+    config:NgbPopoverConfig){
 
     this.pathologiesList = pathologiesList;
     this.principesActifsList = principesActifsList;
@@ -48,7 +54,8 @@ export class AppComponent {
 
 
     this.addButtons();
-    
+    config.placement ='right';
+    config.triggers ='hover';
 
   }
   ngOnInit() {
@@ -57,6 +64,7 @@ export class AppComponent {
       this.pathologiesList = pathologiesList;  
       this.spinner.hide(); 
     }, 1000);
+
     
   }
 
@@ -98,14 +106,18 @@ export class AppComponent {
       this.spinner.show();
       this.appService.getMedicaments().subscribe(
         medicament => {
+          if(medicament){
           this.medicamentslist=medicament;
           for (let i = 0; i < this.medicamentslist.length; i++) {
             let denomination = this.medicamentslist[i].denomination;
-            if(this.medicamentslist.length ===0)
-              {
-                this.spinner.hide();
-              }
+              this.medicamentExists = true;
+              this.spinner.hide();   
               this.spinner.hide();
+           }
+          } else {
+            console.log("No data to display moron");
+            this.medicamentExists = false;
+            this.spinner.hide();
           }
         },
       );
@@ -117,16 +129,19 @@ export class AppComponent {
       this.spinner.show();
         this.appService.getMedicamentByPathology(name).subscribe(
           medicament =>{
+            if(medicament){
             this.medicamentslist=medicament;
             for (let i = 0; i < this.medicamentslist.length; i++) {
               let codeCIS = this.medicamentslist[i].codeCIS;
               let nom = this.medicamentslist[i].denomination;
-              if(this.medicamentslist.length ===0)
-              {
-                this.spinner.hide();
-              }
+              this.medicamentExists = true;
               this.spinner.hide();
             }
+          } else {
+            console.log("No data to display moron");
+            this.medicamentExists = false;
+            this.spinner.hide();
+          }
           }
         );
     }
@@ -134,14 +149,36 @@ export class AppComponent {
      public getMedicamentDetailsByCodeCis(id:number):Medicament[]{
       this.appService.getMedicamentDetailsByCodeCis(id).subscribe(
         medicament =>{
+          if(medicament){
           this.medicamentsDetailsList = medicament;
-          this.open(); 
+          this.open();
+          } else {
+            console.log("No data to display moron");
+            this.medicamentExists = false;
+            this.spinner.hide();
+          } 
         }
       );
       return this.medicamentsDetailsList;
      } 
 
-    
+    public getPrincipeActifSummaryByName(id:string):PrincipeActif[]{
+      this.appService.getPrincipeActifSummaryByName(id).subscribe(
+        principeActif =>{
+          if(principeActif){
+            this.principeActifSummaryList = principeActif;
+            this.principeActifExists = true;
+          } else {
+            console.log("No data to display moron");
+            this.principeActifExists = false;
+            this.spinner.hide();
+          } 
+        }
+      );
+      return this.principeActifSummaryList;
+    }
+
+
 
      
     public findColor(medicament: string): string {
@@ -158,7 +195,7 @@ export class AppComponent {
     }
 
     open() {
-      const modalRef = this.modalService.open(MedicamentDetailComponent);
+      const modalRef = this.modalService.open(MedicamentDetailComponent,{size:"lg"});
       modalRef.componentInstance.title = 'Médicament';
       modalRef.componentInstance.medicament = this.medicamentsDetailsList;
 

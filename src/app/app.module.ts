@@ -4,8 +4,6 @@ import { AppService } from './app.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { PathologiesComponent } from './pathologies/pathologies.component';
-import { MedicamentsComponent } from './medicaments/medicaments.component';
 import { UiModule } from './ui/ui.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicamentDetailComponent } from './medicament-detail/medicament-detail.component';
@@ -14,6 +12,8 @@ import { MatTableModule } from  '@angular/material';
 import {RouterModule} from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {Medicament} from './../Medicament';
+
+
 
 
 @NgModule({
@@ -32,8 +32,6 @@ import {Medicament} from './../Medicament';
   ],
   declarations: [
     AppComponent,
-    PathologiesComponent,
-    MedicamentsComponent,
     MedicamentDetailComponent    
     ],
 
@@ -41,7 +39,7 @@ import {Medicament} from './../Medicament';
     NgbActiveModal,
     AppService,
     Medicament
-  ],
+    ],
   bootstrap: [AppComponent],
   entryComponents: [
     AppComponent,

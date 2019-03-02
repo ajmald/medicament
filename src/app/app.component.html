@@ -30,7 +30,7 @@
                 <br/><br>
           </form>
           <form [formGroup]="form" *ngIf="showPrincipesActifs">
-              <input type="button" class ="btn" formArrayName="principesActifsList" *ngFor="let principeActif of principesActifsList; let i = index" value="{{principesActifsList[i].nom}}" id="{{principesActifsList[i].nom}}" label = "" (click)="getMedicamentByPathology(principesActifsList[i].nom)">
+              <input type="button" class ="btn"  formArrayName="principesActifsList" *ngFor="let principeActif of principesActifsList; let i = index" value="{{principesActifsList[i].nom}}" id="{{principesActifsList[i].nom}}" label = "" (click)="getMedicamentByPathology(principesActifsList[i].nom);getPrincipeActifSummaryByName(principesActifsList[i].nom)">
               <br/><br>
         </form>
       </div>
@@ -39,12 +39,19 @@
       <div class="centered">
           <dl class="slidedeck"> 
               <img src="../assets/images/medicaments.jpg" width="130" height="130" />
-                  </dl> 
+                  </dl>
+                  <div *ngIf="showPrincipesActifs" >
+                  <label *ngIf="principeActifExists===false">Pas d'informations disponibles sur ce principe actif</label> 
+                  <label *ngIf="principeActifExists">{{principeActifSummaryList.extract}}</label>
+                 </div>
         <h2>Liste des médicaments associés</h2>
+        <div *ngIf="medicamentExists">
             <label *ngFor="let medicament of medicamentslist" [ngStyle]="{color: findColor(medicament.denomination)}"(click)= "getMedicamentDetailsByCodeCis(medicament.codeCIS);">  
                 {{medicament.denomination}}
                  <br/>
             </label>
+            </div>
+            <label *ngIf= "medicamentExists===false">Pas de résultats</label> 
       </div>
     </div>
 

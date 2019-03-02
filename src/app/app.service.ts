@@ -4,6 +4,7 @@ import { HttpClient,HttpHeaders,HttpParams } from '@angular/common/http';
 import {Pathologie} from '../Pathologie';
 import {Medicament} from '../Medicament';
 import { catchError, map, tap } from 'rxjs/operators';
+import { PrincipeActif } from 'src/PrincipeActif';
 
 
 
@@ -17,7 +18,8 @@ export class AppService {
   private baseUrl = "https://open-medicaments.fr/api/v1/medicaments";
   private proxyURL = "https://ng-cors-proxy.herokuapp.com/";
   private targetUrl = this.proxyURL + this.baseUrl;
- 
+  private wikiUrl ="https://fr.wikipedia.org/api/rest_v1";
+  private targetWikiUrl = this.proxyURL + this.wikiUrl;
 
 
 
@@ -57,6 +59,20 @@ getMedicamentDetailsByCodeCis(id: number){
     catchError(this.handleError<any>(`getMedicamentDetailsByCodeCis name=${id}`))
   );
 }
+
+
+
+
+getPrincipeActifSummaryByName(id: string){
+  var params = new HttpParams();
+  return this.http.get(this.targetWikiUrl + '/page/summary/' + id).pipe(
+    tap(_ => this.log(`fetched principe actif name =${id}`)),
+    catchError(this.handleError<any>(`getMedicamentDetailsByCodeCis name=${id}`))
+  );
+}
+
+
+
 
 private log(message: string) {
   console.log("ok");

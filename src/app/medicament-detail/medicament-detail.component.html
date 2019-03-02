@@ -1,6 +1,5 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
 <div class ="container-fluid">
 <div class="modal-header">
@@ -9,7 +8,7 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<div class="modal-body">
+<div class="modal-body modal-lg">
   <b></b>
   <!--<input [(ngModel)]="medicament.denomination" type="string"> -->
   <div class="limiter">
@@ -20,9 +19,10 @@
                   <table class="table table-bordered table-condensed table-body-center" >
   <thead>
     <tr>
-      <td>Forme Pharmaceutique</td>
-      <td>Voies Administration</td>
-      <td>Substances actives</td>
+      <td><b>Forme Pharmaceutique</b></td>
+      <td><b>Voies Administration</b></td>
+      <td><b>Substances actives</b></td>
+      <td><b>Intéractions médicamenteuses connus</b></td>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +35,19 @@
              {{sub.denominationSubstance}} 
           </ng-container>
        </ng-container>
-          </td>
+      </td>
+      <td>
+          <ng-container *ngFor="let comp of m.compositions">
+              <ng-container *ngFor="let sub of comp.substancesActives">
+                  <ng-container *ngFor="let int of sub.interactions">
+                      <b>Famille 1</b> : {{int.famille1}} 
+                      <br> 
+                      <b>Famille 2</b> : {{int.famille2}}
+                    </ng-container>
+              </ng-container>
+           </ng-container> 
+       </td> 
+     
     </tr>
   </tbody>
 </table>

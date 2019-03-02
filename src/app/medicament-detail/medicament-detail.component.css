@@ -15,10 +15,10 @@ display:none;
 }
 .responsive-table-line td { 
 position: relative;
-border: 0px solid transparent;
-padding-left: 50% !important; 
+border: 1px solid transparent;
+padding-left: 20% !important; 
 white-space: normal;
-text-align:right; 
+text-align:left; 
 }
  
 .responsive-table-line td:before { 
@@ -41,3 +41,4 @@ padding:2px;
 div.a {
   text-align: center;
 }
+
