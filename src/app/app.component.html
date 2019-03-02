@@ -6,6 +6,7 @@
     
     <div class="split left">
       <div class="centered">
+          <div id="flex-container">
           <dl class="slidedeck">
               <div class="container">
                   <img src="../assets/images/pathologiessmall.jpeg" class="img" >
@@ -17,16 +18,21 @@
           <dl class="slidedeck">
               <div class="container">
                
-                  <img src="../assets/images/pathologiessmall.jpeg" class="img" >
+                  <img src="../assets/images/principesactifs.jpg" class="img" >
                   <div id ="principesactifs" class="overlay" (click)="setFormVisibility($event)">
-                      <div class="text" >Par spécialité</div>
+                      <div class="text" >Par principes actifs</div>
                     </div>
                   </div>           
           </dl>
+          </div>
         <form [formGroup]="form" *ngIf="showSpecialites">
                 <input type="button" class ="btn" formArrayName="pathologiesList" *ngFor="let pathologie of pathologiesList; let i = index" value="{{pathologiesList[i].nom}}" id="{{pathologiesList[i].nom}}" label = "" (click)="getMedicamentByPathology(pathologiesList[i].nom)">
                 <br/><br>
           </form>
+          <form [formGroup]="form" *ngIf="showPrincipesActifs">
+              <input type="button" class ="btn" formArrayName="principesActifsList" *ngFor="let principeActif of principesActifsList; let i = index" value="{{principesActifsList[i].nom}}" id="{{principesActifsList[i].nom}}" label = "" (click)="getMedicamentByPathology(principesActifsList[i].nom)">
+              <br/><br>
+        </form>
       </div>
     </div>
     <div class="split right">
