@@ -12,6 +12,8 @@ import { MatTableModule } from  '@angular/material';
 import {RouterModule} from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {Medicament} from './../Medicament';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -28,7 +30,8 @@ import {Medicament} from './../Medicament';
     UiModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     AppComponent,

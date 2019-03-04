@@ -133,3 +133,11 @@ cursor: pointer;
   width: 200px;
   margin: 0 auto;
 }
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
