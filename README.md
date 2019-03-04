@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Alt text](src/assets/images/MedicamentApp.png?raw=true "Screenshot")
 
+#Live version
+
+http://medicament-app.herokuapp.com
+
 
 ## Development server
 
